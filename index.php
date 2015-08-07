@@ -1,10 +1,19 @@
 <?php
-	//si le formulaire est soumis
-	if (!empty($_POST)){
-		//stocke le pseudo dans la session
+	session_start();
+	if (!empty($_POST)) {
+		// echo $_POST['username'];
 
-		//redirige sur chat.php
-
+		$username = trim(strip_tags($_POST['username']));
+		
+		if ($_POST['username'] == "student") {
+			$_SESSION['username'] = $_POST['username'];
+			header("location: chat.php");
+			die();
+		}
+		else{
+			echo "votre pseudo est inconnu !";
+		}
+	
 	}
 ?>
 <!DOCTYPE html>
