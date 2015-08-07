@@ -1,1 +1,4 @@
 config.php
+config.dist.php
+consignes.txt
+db.php
