@@ -14,12 +14,14 @@
 	
 	<h1>CHAT</h1>
 
-	<form method="POST" action="send.php">
+	<div id="result"></div>
+
+	<form method="POST" id="sendForm">
 		<input type="text" name="message" id="message" placeholder="Votre message" />
 		<input type="submit" value="OK" />
 	</form>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script> 
-	<script src="js/chat.js"></script>
+	<script type="text/javascript" src="js/chat.js"></script>
 </body>
 </html>
