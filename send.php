@@ -1,9 +1,10 @@
 <?php
 	session_start();
 	include ('db.php');
+	
 	if (!empty($_POST)) {
 		$message = trim(strip_tags($_POST['message']));
-		$username = $_SESSION['username'];
+		$username = trim(strip_tags($_SESSION['username']));
 		$error = "";
 		$microtime_posted = microtime(true);
 
@@ -11,8 +12,8 @@
 			$error = "Vous n'avez rien posté !";
 			// echo $error;
 			$_SESSION['error'] = $error;
-			header("location: chat.php");
-			die();
+			// header("location: chat.php");
+			// die();
 		}
 		else{
 			if (!$error) {
@@ -23,8 +24,8 @@
 				$sth->bindValue(':username',$username);
 				$sth->execute();
 
-			header("location: chat.php");
-			die();
+			// header("location: chat.php");
+			// die();
 			}
 			
 
