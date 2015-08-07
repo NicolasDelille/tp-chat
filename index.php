@@ -2,18 +2,21 @@
 	session_start();
 	if (!empty($_POST)) {
 		// echo $_POST['username'];
-
+		
 		$username = trim(strip_tags($_POST['username']));
 		
-		if ($_POST['username'] == "student") {
-			$_SESSION['username'] = $_POST['username'];
+		//username vide ?
+		if (empty($_POST['username'])) {
+			$error = "Veuillez entrer un pseudo !";
+		}
+
+		// si c'est valide...
+		if (!$error) {
+			$_SESSION['username'] = $username;
 			header("location: chat.php");
 			die();
 		}
-		else{
-			echo "votre pseudo est inconnu !";
-		}
-	
+				
 	}
 ?>
 <!DOCTYPE html>

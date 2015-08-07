@@ -1,3 +1,7 @@
+<?php
+	session_start();
+	// echo "Bienvenue " . $_SESSION['username'] . " !";
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
